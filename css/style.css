@@ -554,3 +554,70 @@ a:focus-visible, button:focus-visible {
   .symptoms-grid { grid-template-columns: 1fr; }
   body.has-sticky-cta { padding-bottom: 72px; }
 }
+
+/* ============================================================
+   ARTIKLAR
+   ============================================================ */
+
+.post-hero { background: var(--navy); color: var(--white); padding: 9.5rem 0 4rem; }
+.post-hero .post-cat {
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange);
+  margin-bottom: 1.1rem;
+}
+.post-hero h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); max-width: 22ch; }
+.post-meta {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+  margin-top: 1.4rem; font-size: 0.85rem; color: rgba(255,255,255,0.65);
+}
+.post-body { max-width: 700px; margin: 0 auto; padding: 4.5rem 6% 5.5rem; }
+.post-body p { color: var(--ink); margin-bottom: 1.35rem; font-size: 1.05rem; line-height: 1.85; }
+.post-body h2 {
+  font-size: 1.45rem; margin: 2.6rem 0 1rem; color: var(--navy);
+}
+.post-body h3 { font-size: 1.15rem; margin: 2rem 0 0.8rem; }
+.post-body ul, .post-body ol { margin: 0 0 1.35rem 1.3rem; color: var(--ink); display: grid; gap: 0.5rem; }
+.post-body li::marker { color: var(--orange); }
+.post-body strong { color: var(--navy); }
+.post-body blockquote {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem;
+  border-left: 3px solid var(--orange); padding-left: 1.4rem;
+  margin: 2rem 0; color: var(--navy);
+}
+.post-back {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.7);
+  text-decoration: none; margin-bottom: 1.6rem;
+}
+.post-back:hover { color: var(--orange); }
+.post-cta {
+  background: var(--greige); border-radius: 8px; padding: 2.2rem;
+  margin-top: 3rem; text-align: center;
+}
+.post-cta h2 { font-size: 1.35rem; }
+.post-cta p { margin: 0.6rem 0 0; }
+.post-cta .btn { margin-top: 1.4rem; }
+
+/* Artikelindex */
+.articles-index { background: var(--beige); padding: 5rem 0 7rem; }
+.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.6rem; margin-top: 3rem; }
+.article-card {
+  background: var(--white); border-radius: 6px; padding: 2rem;
+  text-decoration: none; display: flex; flex-direction: column;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  position: relative; overflow: hidden;
+}
+.article-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+  background: var(--orange); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+.article-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.article-card:hover::before { transform: scaleX(1); }
+.article-card .cat {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 0.8rem;
+}
+.article-card h2 { font-size: 1.3rem; line-height: 1.3; margin-bottom: 0.7rem; }
+.article-card p { font-size: 0.93rem; color: var(--ink); line-height: 1.65; }
+.article-card .meta { margin-top: auto; padding-top: 1.4rem; font-size: 0.8rem; color: var(--ink); }
