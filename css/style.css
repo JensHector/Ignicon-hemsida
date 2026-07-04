@@ -685,3 +685,52 @@ a:focus-visible, button:focus-visible {
   .page-hero .lede { font-size: 0.98rem; line-height: 1.65; margin-top: 1rem; }
   .page-hero h1 { font-size: clamp(1.8rem, 7.5vw, 2.2rem); }
 }
+
+/* ── A: Tjänstekarusell mobil (scroll-snap, native swipe) ── */
+@media (max-width: 720px) {
+  .services-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.9rem;
+    margin-left: -1.5rem; margin-right: -1.5rem;
+    padding: 0.4rem 1.5rem 1.2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .services-grid .service-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+  /* reveal-transform av i karusellen – snap ska glida, inte hoppa */
+  .services-grid .reveal { opacity: 1; transform: none; transition: none; }
+  .swipe-hint { display: block; }
+}
+.swipe-hint {
+  display: none;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink); opacity: 0.6;
+  margin-top: 0.4rem; text-align: center;
+}
+
+/* ── B: Föregående/Nästa tjänst ── */
+.pagernav { background: var(--greige); padding: 3.2rem 0; }
+.pagernav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.pagernav a {
+  background: var(--white); border-radius: 6px; padding: 1.5rem 1.6rem;
+  text-decoration: none; display: grid; gap: 0.3rem;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.pagernav a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.pagernav .dir {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--orange);
+}
+.pagernav h3 { font-size: 1.05rem; color: var(--navy); }
+.pagernav .next { text-align: right; }
+@media (max-width: 720px) {
+  .pagernav h3 { font-size: 0.92rem; }
+  .pagernav a { padding: 1.1rem 1rem; }
+}
