@@ -671,3 +671,17 @@ a:focus-visible, button:focus-visible {
   .hero h1 { font-size: 2rem; }
   .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
+
+/* ── Mobil tjänstesida: avröjning ── */
+@media (max-width: 720px) {
+  /* sticky-CTA räcker – göm hero-knappen (dubblett) */
+  .page-hero .hero-ctas { display: none; }
+  /* breadcrumb: göm nuvarande sida (dubblett av H1), krymp */
+  .breadcrumbs { font-size: 0.72rem; margin-bottom: 1.2rem; }
+  .breadcrumbs li[aria-current] { display: none; }
+  .breadcrumbs li:nth-last-child(2)::after { content: ''; margin: 0; }
+  /* kompaktare hero → TLDR syns i fold */
+  .page-hero { padding: 6.5rem 0 3.4rem; }
+  .page-hero .lede { font-size: 0.98rem; line-height: 1.65; margin-top: 1rem; }
+  .page-hero h1 { font-size: clamp(1.8rem, 7.5vw, 2.2rem); }
+}
