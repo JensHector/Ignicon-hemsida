@@ -1,0 +1,109 @@
+# Ignicon AB – Netlify-konfiguration (nya sajten)
+# Statisk sajt – inget byggsteg behövs
+
+[build]
+  publish = "."
+
+# ============================================
+# REDIRECTS – gamla URL:er → nya strukturen (301 = permanent, för SEO)
+# ============================================
+
+# Gamla tjänste-URL:er (tidigare 302 till ankare) → riktiga tjänstesidor
+[[redirects]]
+  from = "/ledare-chef"
+  to = "/tjanster/ledarskapsutveckling/"
+  status = 301
+
+[[redirects]]
+  from = "/coaching"
+  to = "/tjanster/coaching/"
+  status = 301
+
+[[redirects]]
+  from = "/ledningsgrupper"
+  to = "/tjanster/ledningsgruppsutveckling/"
+  status = 301
+
+[[redirects]]
+  from = "/grupper-team"
+  to = "/tjanster/grupputveckling/"
+  status = 301
+
+[[redirects]]
+  from = "/workshop"
+  to = "/tjanster/workshops/"
+  status = 301
+
+[[redirects]]
+  from = "/forelasningar"
+  to = "/tjanster/forelasningar/"
+  status = 301
+
+# Gamla bloggen → nya artikelindexet
+[[redirects]]
+  from = "/blogg.html"
+  to = "/artiklar/"
+  status = 301
+
+[[redirects]]
+  from = "/blogg"
+  to = "/artiklar/"
+  status = 301
+
+[[redirects]]
+  from = "/blogg-mall*"
+  to = "/artiklar/"
+  status = 301
+
+# Gamla policyfilen → ny ren URL
+[[redirects]]
+  from = "/integritetspolicy.html"
+  to = "/integritetspolicy/"
+  status = 301
+
+# Gamla asset-sökvägar i roten → /assets/ (bilder som kan vara länkade externt)
+[[redirects]]
+  from = "/logga_transparent.svg"
+  to = "/assets/logga_transparent.svg"
+  status = 301
+
+[[redirects]]
+  from = "/og-image.png"
+  to = "/assets/og-image.png"
+  status = 301
+
+[[redirects]]
+  from = "/jens-hector.jpg"
+  to = "/assets/jens-hector.jpg"
+  status = 301
+
+# ============================================
+# SÄKERHETSHEADERS
+# ============================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+# ============================================
+# CACHE
+# ============================================
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
