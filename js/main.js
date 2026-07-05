@@ -15,19 +15,19 @@
   var burger = document.getElementById('navBurger');
   var links = document.getElementById('navLinks');
   if (burger && links) {
-    burger.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
+    function setMenu(open) {
+      links.classList.toggle('open', open);
       burger.classList.toggle('open', open);
+      nav.classList.toggle('menu-open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.documentElement.style.overflow = open ? 'hidden' : '';
       document.body.style.overflow = open ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function () {
+      setMenu(!links.classList.contains('open'));
     });
     links.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        links.classList.remove('open');
-        burger.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+      if (e.target.tagName === 'A') setMenu(false);
     });
   }
 
