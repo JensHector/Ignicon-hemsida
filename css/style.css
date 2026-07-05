@@ -734,3 +734,10 @@ a:focus-visible, button:focus-visible {
   .pagernav h3 { font-size: 0.92rem; }
   .pagernav a { padding: 1.1rem 1rem; }
 }
+
+/* ── Fix: iOS containing-block-bugg vid öppen mobilmeny ── */
+.nav.menu-open {
+  background: var(--navy);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
