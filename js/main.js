@@ -27,7 +27,13 @@
       setMenu(!links.classList.contains('open'));
     });
     links.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') setMenu(false);
+      var a = e.target.closest('a');
+      if (!a) return;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced || !links.classList.contains('open')) { setMenu(false); return; }
+      e.preventDefault();
+      setMenu(false);
+      setTimeout(function () { window.location.href = a.href; }, 480);
     });
   }
 
