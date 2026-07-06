@@ -87,6 +87,7 @@
       <li><a href="/tjanster/"><span class="nav-num" aria-hidden="true">01</span>Tjänster</a></li>
       <li><a href="/om/"><span class="nav-num" aria-hidden="true">02</span>Om oss</a></li>
       <li><a href="/artiklar/"><span class="nav-num" aria-hidden="true">03</span>Artiklar</a></li>
+      <li><a href="/kontakt/"><span class="nav-num" aria-hidden="true">04</span>Kontakt</a></li>
       <li><a href="#kontakt" class="nav-cta">Boka ett samtal</a></li>
       <li class="nav-menu-foot">
         <a href="tel:+46703515189">+46 (0) 703 51 51 89</a>
@@ -144,6 +145,17 @@
       </div>
     </div>
   </section>
+
+  <!-- Från rummet: fotoband. Aktiveras när riktiga bilder från workshops/uppdrag finns i /assets/.
+       Byt filnamn och alt-texter, ta sedan bort kommentarstecknen. Tre liggande bilder (4:3) räcker.
+  <section class="photoband" aria-label="Bilder från våra uppdrag">
+    <div class="photoband-grid">
+      <img src="/assets/rummet-1.jpg" alt="Workshop med ledningsgrupp" loading="lazy" />
+      <img src="/assets/rummet-2.jpg" alt="Facilitering vid whiteboard" loading="lazy" />
+      <img src="/assets/rummet-3.jpg" alt="Gruppövning under utvecklingsprogram" loading="lazy" />
+    </div>
+  </section>
+  -->
 
   <section class="services" id="tjanster">
     <div class="wrap">
@@ -353,7 +365,7 @@
             <input id="f-name" name="name" type="text" required autocomplete="name" />
           </div>
           <div class="field">
-            <label for="f-company">Företag</label>
+            <label for="f-company">Företag <span class="opt">(frivilligt)</span></label>
             <input id="f-company" name="company" type="text" autocomplete="organization" />
           </div>
         </div>
@@ -363,28 +375,15 @@
             <input id="f-email" name="email" type="email" required autocomplete="email" />
           </div>
           <div class="field">
-            <label for="f-phone">Telefon</label>
+            <label for="f-phone">Telefon <span class="opt">(frivilligt)</span></label>
             <input id="f-phone" name="phone" type="tel" autocomplete="tel" />
           </div>
         </div>
         <div class="field">
-          <label for="f-service">Tjänst</label>
-          <select id="f-service" name="service">
-            <option value="">Välj ett område…</option>
-            <option>Ledare &amp; Chef</option>
-            <option>Coaching</option>
-            <option>Ledningsgrupper</option>
-            <option>Grupper &amp; Team</option>
-            <option>Workshop</option>
-            <option>Föreläsning</option>
-            <option>Annat / Vet ej</option>
-          </select>
-        </div>
-        <div class="field">
           <label for="f-message">Meddelande</label>
-          <textarea id="f-message" name="message" rows="5" required></textarea>
+          <textarea id="f-message" name="message" rows="5" required placeholder="Berätta kort var det skaver – vi tar det därifrån."></textarea>
         </div>
-        <small>Genom att skicka formuläret bekräftar du att du tagit del av vår <a href="/integritetspolicy/">integritetspolicy</a>.</small>
+        <small><strong>Vi läser allt själva och återkommer inom en arbetsdag.</strong> Genom att skicka formuläret bekräftar du att du tagit del av vår <a href="/integritetspolicy/">integritetspolicy</a>.</small>
         <button type="submit" class="btn btn-primary">Skicka meddelande</button>
       </form>
     </div>
