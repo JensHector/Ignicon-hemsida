@@ -5,8 +5,9 @@
   /* Nav: transparent → navy vid scroll */
   var nav = document.getElementById('mainNav');
   function onScroll() {
-    if (window.scrollY > 40) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+    var s = window.scrollY > 40;
+    nav.classList.toggle('scrolled', s);
+    document.body.classList.toggle('scrolled', s);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
