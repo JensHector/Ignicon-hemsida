@@ -78,6 +78,18 @@
   status = 301
 
 
+
+# ── Tillagda från GSC 404-export 2026-07-09 ──
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/tjanster/exempel-pa-uppdrag"
+  to = "/tjanster/"
+  status = 301
+
 # ── Legacy-URL:er från ursprungssajten (funna i Googles index 2026-07-07) ──
 # Bekräftade indexerade:
 [[redirects]]
