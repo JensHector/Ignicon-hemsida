@@ -77,6 +77,46 @@
   to = "/assets/jens-hector.jpg"
   status = 301
 
+
+# ── Legacy-URL:er från ursprungssajten (funna i Googles index 2026-07-07) ──
+# Bekräftade indexerade:
+[[redirects]]
+  from = "/om-oss"
+  to = "/om/"
+  status = 301
+
+[[redirects]]
+  from = "/kontakt/tack"
+  to = "/tack/"
+  status = 301
+
+[[redirects]]
+  from = "/tjanster/ledarskapscoaching"
+  to = "/tjanster/coaching/"
+  status = 301
+
+[[redirects]]
+  from = "/tjanster/worshops"
+  to = "/tjanster/workshops/"
+  status = 301
+
+[[redirects]]
+  from = "/exempel-pa-upplag"
+  to = "/tjanster/"
+  status = 301
+
+# Troliga varianter (kostar inget om de aldrig träffas):
+[[redirects]]
+  from = "/tjanster/ledarskapstraning"
+  to = "/tjanster/ledarskapsutveckling/"
+  status = 301
+
+[[redirects]]
+  from = "/exempel-pa-uppdrag"
+  to = "/tjanster/"
+  status = 301
+
+
 # ============================================
 # SÄKERHETSHEADERS
 # ============================================
