@@ -272,16 +272,17 @@ body.scrolled .topbar { opacity: 0; transform: translateY(-100%); }
 }
 .service-card .card-bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; transition: transform 0.6s var(--ease);
+  object-fit: cover; filter: blur(3px); transform: scale(1.04);
+  transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
 }
-.service-card:hover .card-bg { transform: scale(1.04); }
+.service-card:hover .card-bg { transform: scale(1.07); }
 .service-card::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(32,32,50,0.92) 0%, rgba(32,32,50,0.55) 45%, rgba(32,32,50,0.15) 100%);
+  background: linear-gradient(0deg, rgba(32,32,50,0.94) 0%, rgba(32,32,50,0.70) 45%, rgba(32,32,50,0.35) 100%);
   transition: background 0.4s var(--ease);
 }
 .service-card:hover::after {
-  background: linear-gradient(0deg, rgba(32,32,50,0.95) 0%, rgba(32,32,50,0.6) 50%, rgba(32,32,50,0.2) 100%);
+  background: linear-gradient(0deg, rgba(32,32,50,0.96) 0%, rgba(32,32,50,0.74) 50%, rgba(32,32,50,0.40) 100%);
 }
 .service-card .card-content { position: relative; z-index: 2; padding: 1.8rem; }
 
@@ -850,10 +851,10 @@ a:focus-visible, button:focus-visible {
 
 /* ── Fix 5: Coaching-kort ljusare gradient ── */
 .service-card.card-coaching::after {
-  background: linear-gradient(0deg, rgba(32,32,50,0.88) 0%, rgba(32,32,50,0.40) 45%, rgba(32,32,50,0.08) 100%);
+  background: linear-gradient(0deg, rgba(32,32,50,0.94) 0%, rgba(32,32,50,0.68) 45%, rgba(32,32,50,0.32) 100%);
 }
 .service-card.card-coaching:hover::after {
-  background: linear-gradient(0deg, rgba(32,32,50,0.92) 0%, rgba(32,32,50,0.50) 50%, rgba(32,32,50,0.12) 100%);
+  background: linear-gradient(0deg, rgba(32,32,50,0.96) 0%, rgba(32,32,50,0.72) 50%, rgba(32,32,50,0.38) 100%);
 }
 
 /* ── Fix 1: Tjänstesida-hero med bakgrundsbild ── */
