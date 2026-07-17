@@ -289,7 +289,7 @@ body.scrolled .topbar { opacity: 0; transform: translateY(-100%); }
   font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--orange); margin-bottom: 0.9rem;
 }
-.service-card h3 { font-size: 1.28rem; margin-bottom: 0.7rem; color: var(--white); }
+.service-card h3 { font-size: 1.4rem; margin-bottom: 0.7rem; color: var(--white); }
 .service-card p { font-size: 0.94rem; color: rgba(255,255,255,0.82); line-height: 1.65; }
 .service-more {
   margin-top: auto; padding-top: 1.4rem;
@@ -612,7 +612,7 @@ a:focus-visible, button:focus-visible {
    ARTIKLAR
    ============================================================ */
 
-.post-hero { background: var(--navy); color: var(--white); padding: 9.5rem 0 4rem; }
+.post-hero { background: var(--navy); color: var(--white); padding: 10rem 0 5rem; position: relative; overflow: hidden; }
 .post-hero .post-cat {
   display: inline-block; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange);
@@ -756,6 +756,7 @@ a:focus-visible, button:focus-visible {
   .services-grid .service-card {
     flex: 0 0 82%;
     scroll-snap-align: center;
+    min-height: 280px;
   }
   /* reveal-transform av i karusellen – snap ska glida, inte hoppa */
   .services-grid .reveal { opacity: 1; transform: none; transition: none; }
@@ -846,3 +847,23 @@ a:focus-visible, button:focus-visible {
     color: var(--orange); font-size: 0.95rem; margin-top: 0.7rem;
   }
 }
+
+/* ── Fix 5: Coaching-kort ljusare gradient ── */
+.service-card.card-coaching::after {
+  background: linear-gradient(0deg, rgba(32,32,50,0.88) 0%, rgba(32,32,50,0.40) 45%, rgba(32,32,50,0.08) 100%);
+}
+.service-card.card-coaching:hover::after {
+  background: linear-gradient(0deg, rgba(32,32,50,0.92) 0%, rgba(32,32,50,0.50) 50%, rgba(32,32,50,0.12) 100%);
+}
+
+/* ── Fix 1: Tjänstesida-hero med bakgrundsbild ── */
+.page-hero { position: relative; overflow: hidden; }
+.page-hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(145deg, rgba(32,32,50,0.92) 0%, rgba(32,32,50,0.78) 50%, rgba(32,32,50,0.60) 100%);
+}
+.page-hero .wrap { position: relative; z-index: 2; }
